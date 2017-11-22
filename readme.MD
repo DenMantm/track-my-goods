@@ -17,7 +17,11 @@ Quick, requirement set
 - User can get location of the truck on the map
 - User can view historical information
 
-## Technologies will be used used
+## Technologies will be used
+
+I will use c9 IDE (unfortunatley it has no support for TS, but it should be fine),
+at the end application will be deployed to MS Azure..
+
 For the fast, rapid development I will use:
 ### Frontend: 
 Angular2 Application
@@ -26,12 +30,16 @@ Google maps API will be used to display the map
 ### Styling: 
 Bootstrap / Metro.css
 ## Backend: 
-Node.js API
+Node.js as API
 
 My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angular2-node-quickstart
 
+SQL Server Database will be used (Azure)
 
 ## Necesarry models from DB side
+(I will not define models on frontend because of time constrains, but i normally do that)
+
+Database Tables:
 
 User
 
