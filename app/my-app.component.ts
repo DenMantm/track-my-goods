@@ -7,7 +7,7 @@ import { AuthService } from './user/auth.service';
 @Component({
     selector:'body',
     template:`<navbar-component *ngIf="isAuthenticated()"></navbar-component>
-              <router-outlet></router-outlet>`
+    <router-outlet></router-outlet>`
 })
 
 export class MyAppComponent {

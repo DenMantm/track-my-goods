@@ -10,7 +10,7 @@ import { MyAppComponent} from './my-app.component';
 import { NavbarComponent } from './nav/navbar.component';
 import { Error404Component } from './errors/404.component';
 
-import { HomeComponent } from './home/index';
+import { HomeComponent,MapComponent,MapElementService } from './home/index';
 import { LandingPageComponent } from './landing-page/index';
 
 
@@ -20,7 +20,8 @@ import { AuthService } from './user/auth.service';
 
 import { JQUERY_TOKEN,
  FirstPageGuard,
- LoggedInGuard
+ LoggedInGuard,
+ GoogleMapsService
          } from './common/index';
 
 import { appRoutes } from './routes'
@@ -36,17 +37,21 @@ declare let moment:Object;
             FormsModule,
             ReactiveFormsModule,
             HttpModule],
-    declarations:[
+    declarations:   [
                     NavbarComponent,
                     Error404Component,
                     HomeComponent,
                     LandingPageComponent,
-                    MyAppComponent
+                    MyAppComponent,
+                    MapComponent
                     ],
-    providers: [AuthService,FirstPageGuard,LoggedInGuard,{provide:JQUERY_TOKEN,useValue:jQuery}
-
-
-    ],
+    providers: [AuthService,
+                FirstPageGuard,
+                LoggedInGuard,
+                {provide:JQUERY_TOKEN,useValue:jQuery},
+                GoogleMapsService,
+                MapElementService
+                ],
     bootstrap:[MyAppComponent]
 })
 

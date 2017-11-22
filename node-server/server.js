@@ -6,9 +6,30 @@ var  port = process.env.PORT || 8808
 
 var app = express();
 
+
+// var mssql = require('mssql');
+
+// var config = {
+//     user: 'track-my-goods',
+//     password: 'Denmantm123',
+//     server: 'track-my-goods.database.windows.net', 
+//     database: 'track-my-goods',
+//     options :{ encrypt:true}
+// };
+
+
+// var connection = mssql.connect(config, function (err) {if (err)
+//         throw err; 
+// });
+
+
+// config for your database
+
 //database connection
 
 // var mongoose = require('mongoose');
+
+//var mssql = require('./database/sql-server.js');
 
 
 require('./expressConfig')(app);

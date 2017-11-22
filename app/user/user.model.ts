@@ -3,9 +3,8 @@ export interface IUser{
     userName:string;
     firstName:string;
     lastName:string;
+    email:string;
     appSettings:{colourScheme:string,
                  navbarColourScheme:Object,
                  stayAlive:boolean};
-    babySettings:{babyName:string,
-                  babyBirthDate:Date};
 }

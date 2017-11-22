@@ -1,64 +1,9 @@
-
-
 <div [style.background-position]="dynamicBannerBackground" id="banner">
 	<div [style.margin-top]="dynamicMarginTop"[style.opacity]="dynamicOpacity"  id="bannertext">
-		<h3>WELCOME</h3>
+		<h3>Track My Goods</h3>
 		<p><button (click)="loginWindow=true" id='login_button' class="button success block-shadow-success text-shadow">Login</button></p>
 	</div>
 </div>
-
-       <div class='main_body_container'>
-        <!--<div class="margin20 no-margin-left no-margin-right sub-header text-light">-->
-        <!--    Metro UI CSS includes a responsive fluid grid system that appropriately scales up to 12 columns. It includes predefined classes for easy layout options.-->
-        <!--</div>-->
-    
-    <!--Features described-->
-    <h3>Expectations?</h3>
-            <hr>
-            <div class="grid demo-grid">
-                
-                <div class="row cells4">
-                    
-                    <div class="cell">
-                        <div id="box1" class="box blurred-bg tinted">
-                                  <div class="content">
-                                    <h1><span class="mif-feed"></span></h1>
-                                    <p>One</p>
-                                  </div>
-                                </div>
-                    </div>
-                    <div class="cell">
-                               <div id="box1" class="box blurred-bg tinted">
-                                  <div class="content">
-                                    <h1><span class="mif-notification"></span></h1>
-                                    <p>Two</p>
-                                  </div>
-                                </div>
-                    </div>
-                    <div class="cell">
-                                  <div id="box1" class="box blurred-bg tinted">
-                                  <div class="content">
-                                    <h1><span class="mif-database"></span></h1>
-                                    <p>Three</p>
-                                  </div>
-                                </div>
-                    </div>
-                    <div class="cell">
-                                 <div id="box1" class="box blurred-bg tinted">
-                                  <div class="content">
-                                    <h1><span class="mif-file-picture"></span></h1>
-                                    <p>Four</p>
-
-                                  </div>
-                                </div>
-                        
-                    </div>
-                </div>
-            </div>
- 
-        
-        
-    </div> <!--end of main_body_container-->
 <footer><br/><br/>Deniss Strods 2017</footer>
 
 
@@ -66,8 +11,9 @@
             <!--LOGIN FORM HERE -->
 <div class='login-cover'>
     <div *ngIf='loginWindow' class="login-form padding20 block-shadow animated flipInX" >
+        
         <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-            <h1 class="text-light">Login to service</h1>
+            <h1 class="text-light">Login service</h1>
             <hr class="thin"/>
             <em *ngIf="!validLogin">Username or password incorrect</em>
             <br />
@@ -90,11 +36,12 @@
             <br />
             <br />
             <div class="form-actions">
-                <button [disabled]="loginForm.invalid"  type="submit" class="button primary">Login to my cam</button>
+                <button [disabled]="loginForm.invalid"  type="submit" class="button primary">Login</button>
                 <button (click)="loginWindow=false" id='cancel_login_button' type="button" class="button link">Cancel</button>
-                
             </div>
         </form>
+        
+        
+        
     </div>
 </div>
-    
