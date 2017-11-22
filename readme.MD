@@ -7,10 +7,10 @@ It doesn’t have to be fully functional. You are free to use any resource avail
 
 Solution:
 Quick, requirement set
-#User needs to be able to login to the system
-#User needs to be able to logout of the system
-#User has to be able to get list of available trucks from database
-#User needs to be able to get location of the truck on the map
+# User needs to be able to login to the system
+# User needs to be able to logout of the system
+# User has to be able to get list of available trucks from database
+# User needs to be able to get location of the truck on the map
 Technologies will be used used
 For the fast, rapid development I will use:
 Frontend: Angular2 Application
