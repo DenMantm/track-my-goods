@@ -13,12 +13,20 @@ Quick, requirement set
 - User can get location of the truck on the map
 - User can view historical information
 
-Technologies will be used used
+## Technologies will be used used
 For the fast, rapid development I will use:
-Frontend: Angular2 Application
-Styling: Bootstrap / Metro.css
-Backend: Node.js API
-My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angular2-node-quickstart 
+### Frontend: 
+Angular2 Application
+### Styling: 
+Bootstrap / Metro.css
+## Backend: 
+Node.js API
+
+My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angular2-node-quickstart
+
+Google maps API will be used to display the map
+
+## Necesarry models from DB side
 
 
 
