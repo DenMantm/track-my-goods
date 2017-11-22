@@ -4,7 +4,5 @@ export interface IUser{
     firstName:string;
     lastName:string;
     email:string;
-    appSettings:{colourScheme:string,
-                 navbarColourScheme:Object,
-                 stayAlive:boolean};
+    appSettings:{};
 }

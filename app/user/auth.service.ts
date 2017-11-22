@@ -14,25 +14,9 @@ export class AuthService{
     
     
     constructor(private router:Router,private http:Http){
-
     }
 
     isAuthenticated(){
-       // console.log(new Error().stack);
-     //   console.log("DEBUG HERE: "+!!this.currentUser);
-    //    if(!!!this.currentUser){
-    //         return !!this.isAuthenticatedOnServer().then(res=>{
-    //         if(res.id == undefined){
-    //           return false;
-    //         }else{
-    //           return true;
-    //         }
-    //     });
-
-
-    //    }else{
-    //        return true;
-    //    }
     
         return !!this.currentUser;
     }
@@ -49,31 +33,14 @@ export class AuthService{
     }
 
     login(username,password){
-        //spin authentication here and if succesfull
         let headers = new Headers({'Content-Type':'application/json'});
         let options = new RequestOptions({headers:headers});
         let loginInfo = {username:username,password:password};
 
         this.loginSubject = this.http.post('/api/login',JSON.stringify(loginInfo),options);
-        
-        
-        
-        
-        
-        
-        console.log(loginInfo);
 
-        // return this.http.post('/api/login',JSON.stringify(loginInfo),options).do(
-        //     resp =>{ if(resp){
-        //         this.currentUser = resp.json().user;
-        //         this.router.navigate(['/home']);
-        //     }
-        // }).catch(error =>{
-        //         return Observable.of(false);
-        //     })
         this.loginSubject.subscribe(resp => {
             if(resp){
-                //console.log();
                 
                 if(resp.json().status == 'failed'){
                     console.log('Failed to login');
@@ -93,38 +60,6 @@ export class AuthService{
             
         return this.loginSubject;
             
-        
-        // this.currentUser = {id:1, 
-        //             username:username,
-        //             firstName:'Deniss' }
-
-        
-        //return true
-    }
-        changeUserSettings(updatedUser){
-        //spin authentication here and if succesfull
-        let headers = new Headers({'Content-Type':'application/json'});
-        let options = new RequestOptions({headers:headers});
-        //let loginInfo = {username:username,password:password};
-
-        console.log(updatedUser);
-
-        return this.http.post('/api/changeSettings',JSON.stringify(updatedUser),options).do(
-            resp =>{ if(resp){
-                // this.currentUser = resp.json().user;
-                // this.router.navigate(['/home']);
-                console.log('SPINNNINNNGG!!!');
-                
-            }
-        }).catch(error =>{
-                return Observable.of(false);
-            })
-        // this.currentUser = {id:1, 
-        //             username:username,
-        //             firstName:'Deniss' }
-
-        
-        //return true
     }
 
     logout(){

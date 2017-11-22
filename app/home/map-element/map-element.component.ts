@@ -1,7 +1,6 @@
 import {Component, ViewChild, ElementRef, AfterViewInit,OnInit, Inject,Output, EventEmitter} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../user/auth.service';
-import { JQUERY_TOKEN, GoogleMapsService } from '../../common/index';
+import { GoogleMapsService } from '../../common/index';
 import { MapElementService } from './map-element.service';
 
 
@@ -31,19 +30,17 @@ export class MapComponent implements OnInit {
     
     this.mapServ.insertTruckRecords().subscribe( (res:any) => {
     	
-    	
-    	console.log('Finishing insertion');
-    	
     	this.generationFinished.emit();
     	
     	console.log(res);
     	
     })
     
-    //assuming that this will be in ireland, hardcoding
+    //assuming that this will be in ireland, hardcoding map..
+    //this part is only necesarry if we would not be displaying first truck at the start, but would wait for the user to do it.
+    //for demonstration purpose, first truck is selected, so technically this even can be commented out
     this.mapService.initMap(this.map);
   }
-	ngOnChanges(){
-	}
+
 
 }

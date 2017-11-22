@@ -1,7 +1,7 @@
 import {Component, ViewChild, ElementRef, AfterViewInit,OnInit, Inject} from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { ActivatedRoute } from '@angular/router';
-import { JQUERY_TOKEN, GoogleMapsService } from '../common/index';
+import { GoogleMapsService } from '../common/index';
 import { MapElementService } from './map-element/map-element.service';
 
 
@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
   ngAfterViewInit() {
     	this.mapServ.getTruckList().subscribe((res:any)=>{
     		if(res){
-    			console.log(res);
     			this.truckFleet = JSON.parse(res._body);
     		}
     		else{
@@ -50,6 +49,8 @@ export class HomeComponent implements OnInit {
 	
 	triggerDataPull(){
 		
+		//when new records in database are created and old set to inactive populate data structutres with relevant data from backend
+		
 		this.mapServ.getTruckRecords().subscribe((res:any)=>{
 			
 			this.truckRootRecords = JSON.parse(res._body);
@@ -60,12 +61,15 @@ export class HomeComponent implements OnInit {
 			
 			this.displayTruck(firstTruckId);
 		
-			
 		})
 		
 		
 	}
 	displayTruck(truckId){
+		
+		
+		//in full application this would be separated and would be returned as one item at a time
+		
 
 			this.currentActive = this.truckRootRecords.filter(item => 
 			item.truck_id == truckId && item.is_active == true )[0];
