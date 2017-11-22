@@ -17,6 +17,8 @@ Quick, requirement set
 For the fast, rapid development I will use:
 ### Frontend: 
 Angular2 Application
+
+Google maps API will be used to display the map
 ### Styling: 
 Bootstrap / Metro.css
 ## Backend: 
@@ -24,10 +26,11 @@ Node.js API
 
 My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angular2-node-quickstart
 
-Google maps API will be used to display the map
 
 ## Necesarry models from DB side
 
+User
 
+Transport
 
 ```
