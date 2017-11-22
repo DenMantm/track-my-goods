@@ -3,9 +3,8 @@ var passport = require('passport'),
 
 var mssql = require('./database/sql-server');
 
-var db = require("./database/db"); 
   
-module.exports = function() {
+module.exports = function(db) {
   
   
   passport.use(new LocalStrategy(

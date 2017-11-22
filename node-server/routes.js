@@ -3,9 +3,10 @@ var auth = require('./auth'),
 
 var fs = require('fs');
 
+var mssql = require('./database/sql-server');
 
 
-module.exports = function(app) {
+module.exports = function(app,connection) {
 
   //Custom paths
     app.get('/landingPage', function(req, res) {
@@ -17,7 +18,26 @@ module.exports = function(app) {
   });
 
 
-
+  app.get('/api/getTruckList', function(req,res){
+    
+    mssql.getTruckFleet(res,connection);
+    
+  });
+  
+  
+    app.get('/api/insertTruckRecords', function(req,res){
+    
+    mssql.insertTruckRecords(connection,res);
+    
+  });
+  
+  
+  app.get('/api/getTruckRecords', function(req,res){
+    
+    mssql.getTruckRecords(connection,res);
+    
+  });
+  
 
   app.post('/api/login', auth.authenticate);
   app.get('/api/currentIdentity', auth.getCurrentIdentity);

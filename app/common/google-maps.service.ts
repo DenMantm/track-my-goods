@@ -8,6 +8,10 @@ export class GoogleMapsService{
     autoDriveSteps:any = new Array();
     speedFactor:any = 100;
     map:any
+    route:any
+    marker:any;
+    directionsDisplay:any;
+    directionsService:any;
 
 constructor(@Inject(JQUERY_TOKEN) private $){
 }
@@ -102,16 +106,42 @@ placeMarker(location) {
     });
 }
 
-drawRoute(){
+drawRoute(mapItem){
     
-    let directionsDisplay = new google.maps.DirectionsRenderer({
+    
+    
+    this.initMap(this.$('#map')[0])
+    
+    
+    
+    if (this.directionsDisplay != undefined) {
+        this.directionsDisplay.set('directions', null)
+        this.directionsDisplay.setMap(null);
+        this.directionsDisplay.setDirections({routes: []});
+        this.directionsDisplay = null;
+    }
+    
+    if(this.route != undefined){
+        this.route.setMap (null);
+        
+    }
+    
+    
+    this.directionsDisplay = new google.maps.DirectionsRenderer({
           map: this.map
     });
     
+
     
     
-        let point1 = {lat: this.generateLat(), lng: this.generateLong()};
-        let point2 = {lat: this.generateLat(), lng: this.generateLong()};
+    if(this.marker != undefined){
+        this.marker.setMap(null);
+    }
+    
+    
+    
+        let point1 = {lat: mapItem.start_lat, lng: mapItem.start_lng};
+        let point2 = {lat: mapItem.finish_lat, lng: mapItem.finish_lng};
 
         // Set destination, origin and travel mode.
         let request = {
@@ -120,16 +150,17 @@ drawRoute(){
           travelMode: 'DRIVING'
         };
 
-        let marker = this.placeMarker(point1);
+        this.marker = this.placeMarker(point1);
 
                 // Pass the directions request to the directions service.
-      var directionsService = new google.maps.DirectionsService();
-       var route = directionsService.route(request, (response, status) => {
+      this.directionsService = new google.maps.DirectionsService();
+      
+       this.route = this.directionsService.route(request, (response, status) => {
           if (status == 'OK') {
             // Display the route on the map.
-            directionsDisplay.setDirections(response);
+            this.directionsDisplay.setDirections(response);
             this.setAnimatedRoute(point1, point2, this.map);
-            this.startRouteAnimation(marker);
+            this.startRouteAnimation(this.marker);
           }
         });
     

@@ -35,34 +35,34 @@ button {
 
 
 
-.background{
-						-webkit-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						-moz-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						background-color:white;
-						height:100%;
-            width:inherit;
-            position:absolute;
-            opacity: 0.75;
-            margin-top: -10px;
-            margin-left: -10px;
-            background-image: url("/app/assets/images/shared/ovm0NSK.jpg");
-                z-index: -1;
-            }
-.background-white{
-						-webkit-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						-moz-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);
-						background-color:white;
-						height:120%;
-            width:inherit;
-            position:fixed;
-            opacity: 0.75;
-            margin-top: -70px;
-            margin-left: -10px;
-            background-color:white;
-                z-index: -1;
-            }
+/*.background{*/
+/*						-webkit-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						-moz-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						background-color:white;*/
+/*						height:100%;*/
+/*            width:inherit;*/
+/*            position:absolute;*/
+/*            opacity: 0.75;*/
+/*            margin-top: -10px;*/
+/*            margin-left: -10px;*/
+/*            background-image: url("/app/assets/images/shared/ovm0NSK.jpg");*/
+/*                z-index: -1;*/
+/*            }*/
+/*.background-white{*/
+/*						-webkit-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						-moz-box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						box-shadow: 0px 7px 20px 11px rgba(0,0,0,0.75);*/
+/*						background-color:white;*/
+/*						height:120%;*/
+/*            width:inherit;*/
+/*            position:fixed;*/
+/*            opacity: 0.75;*/
+/*            margin-top: -70px;*/
+/*            margin-left: -10px;*/
+/*            background-color:white;*/
+/*                z-index: -1;*/
+/*            }*/
 h3{color:lightsteelblue}
 .scheme-blue{
   width:100%;
@@ -70,11 +70,11 @@ h3{color:lightsteelblue}
   background-color:#71b1d1;
 
 }
-.scheme-green{
-  width:100%;
-  height:100%;
-  background-color:green;
-}
+/*.scheme-green{*/
+/*  width:100%;*/
+/*  height:100%;*/
+/*  background-color:green;*/
+/*}*/
 
 
 .loader{
@@ -86,7 +86,7 @@ h3{color:lightsteelblue}
   z-index: 9999;
   /*background: url('/app/assets/images/shared/giphy.gif') 50% 50% no-repeat rgb(249,249,249);*/
 }
-body{background-color:#558C89;}
-.col-md-3{
-}
-li { cursor: pointer; cursor: hand; }
+/*body{background-color:#558C89;}*/
+/*.col-md-3{*/
+/*}*/
+a { cursor: pointer; cursor: hand; }

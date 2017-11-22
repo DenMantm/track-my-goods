@@ -6,6 +6,7 @@ var  port = process.env.PORT || 8808
 
 var app = express();
 
+var db = require("./database/db"); 
 
 // var mssql = require('mssql');
 
@@ -34,9 +35,9 @@ var app = express();
 
 require('./expressConfig')(app);
 
-require('./passport')();
+require('./passport')(db);
 
-require('./routes')(app);
+require('./routes')(app,db);
 
 app.listen(port);
 console.log('Listening on port ' + port + '...');
