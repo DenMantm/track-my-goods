@@ -1,5 +1,9 @@
 Excercise
 ========================
+##Complete demo is running on
+
+http://track-my-goods.azurewebsites.net/
+
 ## Problem:
 Your client, Transport Plus Ltd., have requested a new web application to track their vehicle fleet in real time. All their vehicles have been fitted with GPS and the vehicle configuration, i.e. tracking id, is stored in a SQL Server database. Transport Plus Ltd. want the new web app to provide secure login for their traffic controllers so they can view the position of each vehicle on a map.
 The goal of this exercise is to design a skeletal code solution for this problem. Please also provide details on technical choices made, i.e. frameworks usage, model structures, etc. The provided code does not have to be functional.
@@ -31,13 +35,6 @@ My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angul
 
 User
 
-<<<<<<<<< saved version
-Transport
+TransportFleet
 
-<<<<<<< HEAD
-=======
-```
->>>>>>> a02880368f0be124830020d58235697d2554e36d
-=========
-Transport
->>>>>>>>> local version
+RootRecords
