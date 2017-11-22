@@ -3,19 +3,54 @@
     <div class='col-md-3'>
         <h3>List of the trucks:</h3>
         <div class="list-group">
-          <a (click)="displayTruck(item.truck_id)" *ngFor="let item of truckFleet" class="list-group-item list-group-item-action">{{item.truck_id}}</a>
+          <a (click)="displayTruck(item.truck_id)" [ngClass]="{'active': item.truck_id == currentActive?.truck_id }" *ngFor="let item of truckFleet" class="list-group-item list-group-item-action">{{item.truck_id}}</a>
         </div>
     </div>
     <div class='col-md-9' class="map-box">
         <map-element (generationFinished)="triggerDataPull()"></map-element>
     </div>
 </div>
+
+<br/>
+<br/>
+
 <div class='row'>
     <div class='col-md-6'>
     <h3>Current Root:</h3>
+    <p>As there was no real feed from the truck fleet, there is the fake emulater that allows to vizualize how it could look like in real life</p>
+    <div class="card" style="width: 20rem;margin-top:15px;">
+     <div class="card-body">
+    <h4 *ngIf="currentActive"class="card-title">Root Id: {{currentActive.id}}</h4>
+    <h6 *ngIf="currentActive" class="card-subtitle mb-2 text-muted">Driver: {{currentActive.driveer}}</h6>
+    <p *ngIf="currentActive" class="card-text">Description of goods: {{currentActive.goods}}</p>
+    <p *ngIf="currentActive" class="card-text">Start point: {{currentActive.start_lat}} - {{currentActive.start_lng}}</p>
+      </div>
+    </div>
+    
+    
     </div>
     <div class='col-md-6'>
     <h3>History of roots:</h3>
+    <p>Each time the application is refreshed, new fake routes are instrted into the database and all previous routes are set to inactive, this way there is a possibility to demonstrate a history.</p>
+    
+    <div *ngFor="let item of currentHistorical"  class="card" style="width: 20rem;margin-top:15px;">
+     <div class="card-body">
+    <h4 class="card-title">Root Id: {{item.id}}</h4>
+    <h6  class="card-subtitle mb-2 text-muted">Driver: {{item.driveer}}</h6>
+    <p class="card-text">Description of goods: {{item.goods}}</p>
+    <p  class="card-text">Start point: {{item.start_lat}} - {{item.start_lng}}</p>
+      </div>
+    </div>
+    
+    
+    
+    
+    
     </div>
 </div>
 </div>
+
+<br/>
+<br/>
+
+<footer><br/><br/>Deniss Strods 2017</footer>

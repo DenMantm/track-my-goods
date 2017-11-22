@@ -81,7 +81,7 @@ getPointBetween(a, b, ratio) {
     return new google.maps.LatLng(a.lat() + (b.lat() - a.lat()) * ratio, a.lng() + (b.lng() - a.lng()) * ratio);
 }
 
-// start the route simulation   
+// in the real application this would take feed from the backend instead of the generation
 startRouteAnimation(marker) {
     let autoDriveTimer = setInterval( () => {
             // stop the timer if the route is finished
@@ -107,12 +107,10 @@ placeMarker(location) {
 }
 
 drawRoute(mapItem){
-    
-    
+
+    // Resetting map
     
     this.initMap(this.$('#map')[0])
-    
-    
     
     if (this.directionsDisplay != undefined) {
         this.directionsDisplay.set('directions', null)
@@ -130,8 +128,6 @@ drawRoute(mapItem){
     this.directionsDisplay = new google.maps.DirectionsRenderer({
           map: this.map
     });
-    
-
     
     
     if(this.marker != undefined){

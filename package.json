@@ -5,7 +5,8 @@
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run server\" ",
     "server": "node node-server/server.js",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "postinstall": "tsc"
   },
   "keywords": [],
   "author": "Deniss Strods",

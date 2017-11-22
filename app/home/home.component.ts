@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
 			let firstTruckId = this.truckRootRecords[0].truck_id;
 			
 			
-		//	this.displayTruck(firstTruckId);
+			this.displayTruck(firstTruckId);
 		
 			
 		})
