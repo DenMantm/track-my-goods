@@ -31,5 +31,13 @@ My Angualr2 / Node.js Start repo will be used: https://github.com/DenMantm/angul
 
 User
 
+<<<<<<<<< saved version
 Transport
 
+<<<<<<< HEAD
+=======
+```
+>>>>>>> a02880368f0be124830020d58235697d2554e36d
+=========
+Transport
+>>>>>>>>> local version
