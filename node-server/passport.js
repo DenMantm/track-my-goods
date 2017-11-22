@@ -12,7 +12,8 @@ module.exports = function(db) {
             
             
             //excluding password as irelevant
-            console.log(db);
+            console.log(username);
+            
             mssql.getUser(username,done,db);
       
         //     userModel.findOne({ 'userName' :  username }, function(err, user) {

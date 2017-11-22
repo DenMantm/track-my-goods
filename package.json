@@ -2,7 +2,7 @@
   "name": "node-angular2-start",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run server\" ",
+    "start": "node node-server/server.js",
     "server": "node node-server/server.js",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -40,7 +40,7 @@
     "mongodb": "^2.2.26",
     "mongoose": "^4.10.2",
     "morgan": "1.7.0",
-    "mssql": "^4.1.0",
+    "mssql": "^3.3.0",
     "ng2f-bootstrap": "0.0.4",
     "nodemon": "^1.11.0",
     "passport": "0.3.2",
