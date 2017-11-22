@@ -11,22 +11,10 @@ module.exports = function(db) {
     function(username, password, done) {
             
             
-            //excluding password as irelevant
+            //password is stored as plain text in the database, i am not including encription..
             console.log(username);
-            
-            mssql.getUser(username,done,db);
+            mssql.getUser(username,password,done,db);
       
-        //     userModel.findOne({ 'userName' :  username }, function(err, user) {
-               
-        //     // if there are any errors, return the error before anything else
-        //     if (err)
-        //         return done(err);
-        //     // if no user is found, return the message
-        //     if (!user)
-        //         return done(null, false); // req.flash is the way to set flashdata using connect-flash
-        //     return done(null, user);
-        // });
-     
     }
   ));
 
@@ -38,11 +26,6 @@ module.exports = function(db) {
 
   passport.deserializeUser(function(id, done) {
     
-    
-        // userModel.findOne({ 'id' :  id }, function(err, user) {
-        //   done(err, user);
-        // });
-        
         mssql.getUserById(id,done,db);
         
         

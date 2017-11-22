@@ -6,7 +6,7 @@
 var sql = require('mssql');
 
 
-exports.getUser = function(username,done,connection){
+exports.getUser = function(username,password,done,connection){
     
     var sqlQuery = "select * from users where username = " + "'"+username+"'";
     
@@ -18,7 +18,8 @@ exports.getUser = function(username,done,connection){
         if (err){
         done(err);
         }
-
+        
+        if(recordset[0].password == password){
         // send records as a response
         console.log(recordset);
         if(recordset!= undefined){
@@ -28,6 +29,10 @@ exports.getUser = function(username,done,connection){
         else {
             done(null, false);
         }
+        }
+        }
+        else{
+            done(null, false);
         }
         
         //res.send(recordset);
